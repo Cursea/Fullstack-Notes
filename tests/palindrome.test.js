@@ -1,19 +1,19 @@
-const pallindrome = string => {
-    return string
-        .split('')
-        .reverse()
-        .join('')
-}
+const palindrome = require('../utils/for_testing').palindrome
 
-const average = array => {
-    const reducer = (sum, item) => {
-        return sum + item
-    }
+test('palindrome of a', () => {
+  const result = palindrome('a')
 
-    return array.reduce(reducer, 0) / array.length
-}
+  expect(result).toBe('a')
+})
 
-module.exports = {
-    pallindrome,
-    average
-}
+test('palindrome of react', () => {
+  const result = palindrome('react')
+
+  expect(result).toBe('tcaer')
+})
+
+test('palindrome of releveler', () => {
+  const result = palindrome('releveler')
+
+  expect(result).toBe('releveler')
+})
