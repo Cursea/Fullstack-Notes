@@ -10,7 +10,7 @@ const password = process.argv[2]
 const url =
   `mongodb+srv://fullstack:${password}@cluster0-ostce.mongodb.net/note-app?retryWrites=true`
 
-mongoose.connect(url, { useNewUrlParser: true })
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const noteSchema = new mongoose.Schema({
   content: String,
@@ -26,7 +26,14 @@ const note = new Note({
   important: true,
 })
 
-note.save().then(() => {
-  console.log('note saved!')
+// note.save().then(() => {
+//   console.log('note saved!')
+//   mongoose.connection.close()
+// })
+
+Note.find({}).then(result => {
+  result.forEach(note => {
+    console.log(note)
+  })
   mongoose.connection.close()
 })
