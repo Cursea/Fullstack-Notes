@@ -1,8 +1,8 @@
 post http://localhost:3001/api/notes
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNvbmZ1c2VkU25vdyIsImlkIjoiNWY5MzIwMDdhZDRhM2IxN2U0NzdiM2ViIiwiaWF0IjoxNjAzNDg0MDk1fQ.UpUDKd3XINaTrI9Y-w9varn3StsrLQ-gb2vNtzY20Vo
 
 {
-  "content": "Another note, created by initial user",
-  "important": true,
-  "userId": "5f91fb01cb7fe833802a3cde"
+  "content": "Note by user[1]",
+  "important": false
 }
